@@ -1,0 +1,311 @@
+/*
+    HOME PAGE / BOOTSTRAP PAGE CSS FILE
+*/
+
+
+*{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+}
+
+/* profile dropdown in navbar */
+#dropdownMenuButton:focus, #dropdownMenuButton:active{
+    outline: none!important;
+    box-shadow: none!important;
+    border: none;
+}
+#profileInfoCloseButton:focus, #profileInfoCloseButton:active,
+#profileEditCloseButton:focus, #profileEditCloseButton:active{
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+/* labels in profile info or edit */
+.infoLabel, .editLabel{
+    font-weight: 500!important;
+    margin-top: 2%!important;
+}
+
+/* id in profile info */
+.infoEditIdDiv{
+    color: white;
+    background-color: #712cf9;
+    border-radius: 10px;
+}
+
+/* close button in profile info modal */
+#profileInfoCloseButton{
+    background-color: white!important;
+    box-shadow: none;
+}
+/* close button in profile edit modal */
+#profileEditCloseButton{
+    background-color: white!important;
+    box-shadow: none;
+}
+
+/* profile info green horizontal */
+.hrGreen{
+    border-top: 2px solid #009d76!important;
+    border-radius: 40px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+/* custom hortizontal line between roles */
+#roleHrTag{
+    margin: 0px;
+    border-top: 1px solid #0000001a;
+}
+
+/* profile edit skill pills */
+.pillSpan{
+    background-color: #327fc7!important;
+    border-radius: 30px;
+}
+/* cross icon in pills */
+.crossIcon {
+    visibility: visible !important;
+    margin-left: 1%;
+    margin-right: 2%;
+    cursor: pointer;
+    color: white;
+}
+.crossIcon:hover{
+    color: black;
+    background-color: white;
+}
+
+/*  */
+.infoDiv{
+    font-weight: 400px!important;
+}
+
+/*  */
+.editInput{
+    border: 2px solid #363636;
+}
+.editInput:hover{
+    background-color: #edfdfd;
+    border-color: #8b94c5;
+}
+
+
+/* int tel */
+.iti.iti--allow-dropdown{
+    width: 100%;
+}
+.iti-mobile .iti__country-list{
+    max-width: fit-content;
+}
+
+
+
+
+
+
+/*
+    BOOTSTRAP MAIN CONTENT
+ */
+
+
+/* LEFT and RIGHT sidebars visibilty */
+#leftSideBar, #rightSideBar{
+    visibility: hidden;
+    position: absolute;
+}
+@media screen and (min-width:992px) {
+    #leftSideBar, #rightSideBar{
+        visibility: visible;
+        position: relative;
+    }
+}
+
+
+/* NAVBAR */
+.required-bg-purple{ background-color: #712cf9;}
+.required-border-purple{ border-color: #712CF9;}
+/* bootstrap logo in navbar */
+#bootstrapLogo:hover{
+    transition: all 0.3s;
+    transform: scale(1.1) rotate(-4deg);
+}
+/* search logo in search button */
+.navbarSearchIconInButton{
+    top: 20%;
+    right: 5%;
+}
+/* ctrl text in search button */
+.navbarCtrlInButton{
+    position: absolute;
+    right: 1rem;
+    color: #ffffff8f;
+    background-color: #00000040;
+}
+/* version button in navbar */
+.navbarVersionButton{
+    border-left:2px solid #ffffff3e;
+    border-right:2px solid #ffffff3e;
+}
+/* 16px font-size */
+.fs-16{font-size: 16px;}
+/* 0.7rem font-size */
+.fs-0pt7rem{font-size: 0.7rem;}
+/* 1rem font-size */
+.fs-1rem{font-size: 1rem;}
+/* 2.5rem font-size */
+.fs-2pt5rem{font-size: 2.5rem;}
+/* search button modal search logo */
+.searchButtonModalSearchLogo{top:1rem;}
+.right4top0{
+    right: 4%;
+    top: 0%;
+}
+#viewGithubButton{font-size: 0.9rem;}
+.content-heading{font-size: 3rem;}
+
+
+
+/* search button click modal */
+#navbarSearchModal{margin-top: 6rem;}
+/* navbar anchors */
+.navbar-nav a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    color: #ffffffde;
+    font-weight: 500;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.navbar-nav a:hover{
+    color: white;
+}
+.navbar-nav a:focus{
+    color: white;
+    font-weight: 650;
+}
+
+/* search bar in navbar */
+#searchBarInput:hover{
+    cursor: pointer;
+}
+#searchModalInput:hover, #searchModalInput:focus{
+    border-color: #712cf9!important;
+}
+
+/* input wrapper to wrap input and search logo as one */
+.input-wrapper{
+    color: #ffffff8f;
+    background-color: #0000001a;
+    border-color: #ffffffab;
+    padding:0.35rem;
+}
+.input-wrapper:hover{
+    color: #ffffff;
+    background-color: #00000045 !important;
+    cursor: pointer;
+    border-color: #ffd900;
+    box-shadow: 0 0 0 0.25rem #ffe48466;
+}
+
+/* drop down buttons */
+.dropdown-menu-end button{
+    font-weight: 500;
+}
+.dropdown-menu-end button:hover{
+    color: #712cf9!important;
+    border-color: #712cf9;
+    background-color: #ffffff;
+}
+#profileLogOutButton{
+    font-weight: 500;
+    color: #712cf9;
+    border-color: #712cf9!important;
+}
+#profileLogOutButton:hover{
+    color: #ebda68!important;
+    background-color: #2a2a32!important;
+    border-color: #ffffff!important;
+}
+
+
+
+/* toggle modal */
+#toggleModal{
+    max-width: fit-content;
+}
+/* toggle modal body */
+.overflow-maxheight-90vh{max-height: 90vh;}
+/* navbar toggle button */
+#navbarTogglerButton:focus{
+    box-shadow: none;
+}
+
+
+
+
+/* LEFT SIDEBAR */
+.left-right-panel-scrollable-div{
+    max-height: 100vh;
+    overflow-y: scroll;
+}
+/* boot panel controls all buttons in left sidebar */
+.boot-left-panel button{
+    margin: 0.15rem 0rem;
+    color: #212522;
+    font-size: 0.85rem!important;
+    min-width: fit-content;
+    max-width: fit-content;
+    border: 0px;
+}
+.boot-left-panel button:hover,.boot-left-panel button:active,.boot-left-panel button:focus{
+    cursor: pointer;
+    /* border-color: #712cf91a!important; */
+    color: #000!important;
+    background-color: #712cf91a!important;
+}
+.boot-left-panel button:active,.boot-left-panel button:focus{font-weight: 600;}
+
+
+/* RIGHT SIDEBAR anchors*/
+.nav-pills a button{
+    font-size: 0.9rem;
+    color: #212539BF;
+    font-weight: 400;
+    border-radius: 0.1rem;
+}
+.nav-pills a button:hover{
+    color: #712cf9;
+    border-left: 0.1rem solid #712cf9;
+}
+.nav-pills a button:focus, .nav-pills a button:active{
+    font-weight: 600;
+    color: #712cf9!important;
+    border-color: white!important;
+    border-left: 0.1rem solid #712cf9!important;
+}
+
+
+/* MAIN CONTENT BODY STYLES */
+
+/* view on github button hover effect */
+#viewGithubButton:hover{
+    color: #6f42c1!important;
+    border-color: #6f42c1!important;
+}
+/* copy buttons in code blocks */
+.codeCopyButtons:hover{color: #0000ff;}
+/* customs code font colors */
+.red{color:#c6303e;}
+.purple{color:#6f42c1}
+.blue{color:#084298}
+.green{color:#13795B}
+
+/* footer content ie. anchors */
+footer a{
+    color: black;
+    text-decoration: none;
+    padding-bottom: 0.5rem;
+}
+footer a:hover{
+    color: #0d6efd;
+    text-decoration: underline;
+}

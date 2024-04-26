@@ -1,0 +1,66 @@
+/* 
+COMMON css file for LOGIN and BOOTSTRAP file
+*/
+
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100vh;
+}
+
+/* all modals submission buttons */
+.mainSubmissionButtons:hover{
+    background-color: #410aa7 !important;
+}
+
+/* to blur body we can do this $('body').(add/remove)Class('blur-effect'); */
+.blur-effect {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}
+
+/* page titles */
+.PageTitle{
+    font-size: calc(1.5rem + .3vw) !important;
+    font-weight: 700!important;
+}
+
+/* used for autocomplete integrated with programming skills */
+.ui-autocomplete {
+    z-index: 10000 !important; /* Adjust the z-index to ensure it appears above the modal */
+}
+
+
+/* toasts font size */
+.redToastCss, .greenToastCss{font-size: 1rem;}
+/* all labels */
+.col-12 label{font-weight: 500;}
+/* all submission buttons */
+.mainSubmissionButtons{
+    background-color: #4e10c2c3;
+    border-color:white;
+}
+/* inavalid spans for inputs */
+.invalidSpan{
+    visibility: hidden;
+    position: absolute;
+    font-weight: 400;
+    color: #ff0000;
+}
+/* modal close buttons */
+.closeButtons{
+    position: absolute;
+    right: 3%;
+}
+
+
+
+
+
+.form-control.is-valid, .was-validated .form-control:valid{
+    border-color: #5e6278!important;
+    padding-right: 2rem!important;
+}
+.form-control.is-invalid, .was-validated .form-control:invalid{
+    border-color: #ff0000!important;
+}

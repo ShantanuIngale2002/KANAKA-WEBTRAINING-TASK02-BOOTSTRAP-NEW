@@ -1,0 +1,99 @@
+/*
+LOGIN PAGE CSS FILE
+*/
+
+
+body{
+    background-image: url("../assets/image/webpageBG.jpg");
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-size: 100vw;
+}
+
+/* red toast bg color */
+.redToastCss {background-color: #e21f50;}
+/* green toast bg color */
+.greenToastCss {background-color: #1fe2a7;}
+
+/* login form margin */
+.LoginForm{margin-left:0;}
+
+/* bg primary css manipulation */
+.bg-primary {
+    color: white;
+    background-color: #e21f50 !important;
+}
+
+/* all inputs, text-area and select styling */
+.col-12 input, textarea {border: 2px solid #363636;}
+.col-12 select {border: 2px solid #363636;}
+
+/* all select inputs hover */
+.col-12 select:hover {
+    background-color: #ffffff;
+    border-color: #8b94c5;
+}
+
+/* input and textarea hovering effect */
+.col-12 input:hover, .col-12 textarea:hover {
+    background-color: #edfdfd;
+    border-color: #8b94c5;
+}
+
+/* forgot modal close/cross button */
+#forgotCloseButton{
+    background-color: white!important;
+    box-shadow: none;
+}
+/* signup modal close/cross button */
+#signupCloseButton{
+    background-color: white!important;
+    box-shadow: none;
+}
+
+/* all anchors in col-12 hover effect */
+.col-12 a:hover {
+    text-decoration: underline !important;
+}
+
+/* int tel */
+.iti.iti--allow-dropdown{
+    width: 100%;
+}
+.iti-mobile .iti__country-list{
+    max-width: fit-content;
+}
+
+/* pills styles*/
+#getModalProgrammingSkill {
+    box-shadow: none;
+    border: 2px solid #363636;
+}
+#getModalProgrammingSkill:hover {
+    background-color: #edfdfd;
+    border-color: #8b94c5;
+}
+.pillSpan{
+    background-color: #1873c8;
+    color: white;
+}
+/* cross icons in pills */
+.crossIcon {
+    visibility: visible !important;
+    margin-left: 1%;
+    margin-right: 2%;
+    cursor: pointer;
+    color: white;
+}
+.crossIcon:hover{
+    color: black !important;
+    background-color: white !important;
+}
+
+
+.col-4 div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #8b94c56a;
+}

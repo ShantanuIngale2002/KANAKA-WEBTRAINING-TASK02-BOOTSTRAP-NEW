@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/favicon/loginFavicon.ico" type="image/x-icon">
+    <title>HOME PAGE</title>
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- international tel no -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/css/intlTelInput.css">
+    <!-- css files -->
+    <link rel="stylesheet" href="style/bootstrapCSS.css">
+    <link rel="stylesheet" href="style/CommonPageCSS.css">
+    <!-- Include jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+</head>
+
+<body>
+
+    <!-- navigation bar -->
+    <header class="navbar navbar-expand-lg required-bg-purple bd-navbar fixed-top py-2">
+        <nav class="container-xxl px-4 d-flex justify-content-between">
+            <!-- toggle button sm-size -->
+            <div class="bd-navbar-toggle">
+                <button id="navbarTogglerButton" class="navbar-toggler p-2 border-0" type="button" data-bs-toggle="modal" data-bs-target="#toggleModal">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="bi" fill="white" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"></path>
+                      </svg>
+                </button>
+            </div>
+
+            <!-- bootstrap logo -->
+            <div>
+                <span class="me-2">
+                    <span><img id="bootstrapLogo" src="./assets/image/bootstraplogonavbarwhite.png" alt="" width="40px"></span>
+                </span>
+            </div>
+
+            <!-- All content in navbar expected to be collapsed when size< -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="d-flex row w-100 justify-content-between">
+                    <div class="col-4 d-flex align-items-center">
+                        <ul class="navbar-nav flex-row">
+                            <li class="nav-item"><a class="p-2" href="#">Docs</a></li>
+                            <li class="nav-item"><a class="p-2" href="#">Examples</a></li>
+                            <li class="nav-item"><a class="p-2" href="#">Icons</a></li>
+                            <li class="nav-item"><a class="p-2" href="#">Themes</a></li>
+                            <li class="nav-item"><a class="p-2" href="#">Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-4 d-flex align-items-center justify-content-around">
+                        <!-- input wrapper absolutes icon and search symbol -->
+                        <button id="navbarSearchButton" class="btn input-wrapper position-relative px-2 my-1 w-75 rounded-2 border-1 d-flex justify-content-start align-items-center fw-bold" data-bs-toggle="modal" data-bs-target="#navbarSearchModal">
+                            <img class="mx-1 my-0 navbarSearchIconInButton" src="./assets/image/searchlogowhite.png" alt="" width="20px">Search
+                                <span class="rounded-1 px-2 navbarCtrlInButton d-flex align-items-center">
+                                    <span class="fs-0pt7rem">CTRL</span>
+                                    <span class="mx-1 fs-1rem">K</span>
+                                </span>
+                        </button>
+                    </div>
+
+                    <div class="col-4 d-flex justify-content-end">
+                        <!-- navbar icons -->
+                        <div class="d-flex">
+                            <button class="btn p-2 rounded-0">
+                                <img src="./assets/image/github.png" alt="" width="16px">
+                            </button>
+                            <button class="btn p-2 border-0">
+                                <img src="./assets/image/twitter.png" alt="" width="15px">
+                            </button>
+                            <button class="btn p-2 border-0">
+                                <img src="./assets/image/arrowlogo.png" alt="" width="18px">
+                            </button>
+                            <div class="d-flex align-items-center mx-2 navbarVersionButton">
+                                <div class="btn-group">
+                                    <div href="" class="navbar-brank m-0">
+                                        <div class="dropdown">
+                                            <button type="button" id="dropdownVersionButton"
+                                                class="btn dropdown-toggle p-0 rounded-0 px-3 text-light border-0" data-bs-toggle="dropdown"
+                                                aria-haspopup="true" aria-expanded="false">
+                                                v5.3
+                                            </button>
+                                            <div class="versionDropDown dropdown-menu dropdown-menu-end px-3 py-3 mt-3 bg-white rounded-4"
+                                                aria-labelledby="dropdownVersionButton">
+                                                <p class="mb-0">v5 releases</p>
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-1 btn text-start btn-light rounded-2 text-white required-bg-purple" data-bs-toggle="modal" data-bs-target="">Latest (5.3.x)</button>
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-1 btn text-start btn-light rounded-2 bg-white"
+                                                    data-bs-toggle="modal" data-bs-target="">v5.2.3</button>
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-1 btn text-start btn-light rounded-2 bg-white"
+                                                    data-bs-toggle="modal" data-bs-target="">v5.1.3</button>
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-1 btn text-start btn-light rounded-2 bg-white"
+                                                    data-bs-toggle="modal" data-bs-target="">v5.0.2</button>
+
+                                                <div class="my-2 dropdown-divider"></div>
+
+                                                <p class="text-center mb-0">Previous releases</p>
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-1 btn text-start btn-light rounded-2 bg-white"
+                                                    data-bs-toggle="modal" data-bs-target="">v4.6.x</button>
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-1 btn text-start btn-light rounded-2 bg-white"
+                                                    data-bs-toggle="modal" data-bs-target="">v3.4.1</button>
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-1 btn text-start btn-light rounded-2 bg-white"
+                                                    data-bs-toggle="modal" data-bs-target="">v2.3.2</button>
+
+                                                <div class="my-2 dropdown-divider"></div>
+
+                                                <button type="button"
+                                                    class="col-12 px-2 mt-0 btn text-start btn-light rounded-2 bg-white"
+                                                    data-bs-toggle="modal" data-bs-target="">All versions</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- profile dropdrown -->
+            <div>
+                <div class="btn-group">
+                    <div href="" class="navbar-brank m-0">
+                        <div class="dropdown">
+                            <button type="button" id="dropdownMenuButton" class="btn dropdown-toggle p-0 rounded-0 px-1 text-white border-0"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img id="navbarProfilePic" class="m-0" src="" alt="Profile Pic" width="30px" height="30px">
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-end border-3 shadow required-border-purple p-3 mt-3 rounded-4" aria-labelledby="dropdownMenuButton">
+                                <button type="button" id="profileInfoButton" class="col-12 px-0 my-1 btn btn-light rounded-4 required-bg-purple border-3 text-white" data-bs-toggle="modal" data-bs-target="#profileInfoModal">View Profile</button>
+                                <button type="button" id="profileEditButton" class="col-12 px-0 my-1 btn btn-light rounded-4 required-bg-purple border-3 text-white" data-bs-toggle="modal" data-bs-target="#profileEditModal">Edit Profile</button>
+                                <div class="dropdown-divider"></div>
+                                <button type="button" id="profileLogOutButton" class="col-12 px-0 py-2 my-1 btn-light bg-white border border-3 rounded-4">Log out</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- page main content -->
+    <main class="d-flex justify-content-center mt-4 position-relative">
+        <div class="container-xxl row d-flex mt-5 position-relative h-100">
+            <div class="row flex-nowrap px-0 h-100 w-100 ms-0">
+
+                <!-- left sidebar panel -->
+                <div id="leftSideBar" class="col-2">
+                    <!-- <div id="leftPanelDiv"> -->
+                    <div class="px-0 leftSideBar bg-white sticky-top vh-50">
+                        <div class="left-right-panel-scrollable-div py-3">
+
+                            <div class="boot-left-panel d-flex flex-column ps-2">
+                                <!-- getting started -->
+                                <div class="d-flex">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/book.png" alt="" height="20px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Getting Started</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Introduction</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Download</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Contents</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Browsers & devices</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">JavaScript</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Webpack</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Parcel</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Vite</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Accessibility</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">RFS</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">RTL</button>
+                                <button href="#" class="pt-1 pb-0 btn w-50 ms-3 text-start">Contribute</button>
+
+                                <!-- customize -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/customize.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Customize</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Overview</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Sass</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Options</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Color</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Color modes</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Components</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS variables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Optimize</button>
+
+                                <!-- layout -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/layout.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Layout</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Breakpoints</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Containers</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Grid</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Columns</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Gutters</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Utilities</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Z-index</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS Grid</button>
+
+                                <!-- content -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/content.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Content</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Reboot</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Typography</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Images</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Tables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Figures</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- main content body -->
+                <div class="col-md-12 col-lg-8 ms-2 h-100 px-4 mt-4">
+                    <!-- bootsrap heading and github button -->
+                    <div class="row">
+                        <div class="col col-md-3 order-md-last d-flex justify-content-md-end align-items-center">
+                            <button id="viewGithubButton" class="btn py-1 px-2 text-secondary border-light-subtle text-nowrap">View on GitHub</button>
+                        </div>
+                        <div class="col-sm-12 col-md order-md-first">
+                            <h5 class="m-0 p-0 content-heading">Get started with Bootstrap</h5>
+                        </div>
+                    </div>
+                    <p id="quickstart" class="fs-4 fw-light">Bootstrap is a powerful, feature-packed frontend toolkit. Build anything—from prototype to production—in minutes.</p>
+
+                    <!-- quick start -->
+                    <h4  class="fs-2 mt-5" >Quick start</h4>
+                    <p class="">Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps. See it in practice with this <a href="#">Bootstrap CodePen demo</a>.</p>
+                    <!-- quick start ordered content -->
+                    <ol class="mt-5" type="1">
+                        <li>
+                            <p class="ms-0"><strong>Create a new <code>index.html</code> file in your project root.</strong> Include the <code>&lt;meta name="viewport"&gt;</code> tag as well for <a href="#">proper responsive behavior</a> in mobile devices.</p>
+                            <div class="bg-light rounded-2 me-4 mb-3 py-4 ps-0 position-relative">
+                                <div class="position-absolute right4top0">
+                                    <button class="btn codeCopyButtons border-0">Copy</button>
+                                </div>
+                                <!-- quick start code block -->
+                                <pre class="d-flex p-0 m-0">
+                                    <code class="overflow-auto d-flex flex-column py-0 px-3 m-0">
+                                        <span class="red text-nowrap">&lt;!doctype html&gt;</span>
+                                        <span>&lt;<span class="red">html</span> <span class="purple">lang</span><span>=</span><span class="blue">"en"</span>&gt;</span>
+                                        <span class="ms-2">&lt;<span class="red">head</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">meta</span> <span class="purple">charset</span>=<span class="blue">"utf-8"</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">meta</span> <span class="purple">name</span>=<span class="blue">"viewport"</span> <span class="purple">content</span>=<span class="blue">"width=device-width, initial-scale=1"</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">title</span>&gt;Bootstrap demo&lt;/<span class="red">title</span>&gt;</span>
+                                        <span class="ms-2">&lt;/<span class="red">head</span>&gt;</span>
+                                        <span class="ms-2">&lt;<span class="red">body</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">h1</span>&gt;Hello, world!&lt;/<span class="red">h1</span>&gt;</span>
+                                        <span class="ms-2">&lt;/<span class="red">body</span>&gt;</span>
+                                        <span>&lt;/<span class="red">html</span>&gt;</span>
+                                    </code>
+                                </pre>
+                            </div>
+                        </li>
+
+                        <li>
+                            <p class="ms-0"><strong>Include Bootstrap’s CSS and JS.</strong> Place the <code>&lt;link&gt;</code> tag in the <code>&lt;head&gt;</code> for our CSS, and the <code>&lt;script&gt;</code> tag for our JavaScript bundle (including Popper for positioning dropdowns, poppers, and tooltips) before the closing <code>&lt;body&gt;</code>. Learn more about our <a href="#">CDN links</a>.</p>
+                            <div class="bg-light rounded-2 me-4 mb-3 py-4 ps-0 position-relative">
+                                <div class="position-absolute right4top0">
+                                    <button class="btn codeCopyButtons border-0">Copy</button>
+                                </div>
+                                <pre class="d-flex p-0 m-0">
+                                    <code class="overflow-auto d-flex flex-column py-0 px-3 m-0">
+                                        <span class="red text-nowrap">&lt;!doctype html&gt;</span>
+                                        <span>&lt;<span class="red">html</span> <span class="purple">lang</span><span>=</span><span class="blue">"en"</span>&gt;</span>
+                                        <span class="ms-2">&lt;<span class="red">head</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">meta</span> <span class="purple">charset</span>=<span class="blue">"utf-8"</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">meta</span> <span class="purple">name</span>=<span class="blue">"viewport"</span> <span class="purple">content</span>=<span class="blue">"width=device-width, initial-scale=1"</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">title</span>&gt;Bootstrap demo&lt;/<span class="red">title</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">link</span> <span class="purple">href</span>=<span class="blue">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"</span> <span class="purple">rel</span>=<span class="blue">"stylesheet"</span> <span class="purple">integrity</span>=<span class="blue">"sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"</span> <span class="purple">crossorigin</span>=<span class="blue">"anonymous"</span>&gt;</span>
+                                        <span class="ms-2">&lt;/<span class="red">head</span>&gt;</span>
+                                        <span class="ms-2">&lt;<span class="red">body</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">h1</span>&gt;Hello, world!&lt;/<span class="red">h1</span>&gt;</span>
+                                        <span class="ms-4">&lt;<span class="red">script</span> <span class="purple">src</span>=<span class="blue">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"</span> <span class="purple">crossorigin</span>=<span class="blue">"anonymous"</span>&gt;&lt;/<span class="red">script</span>&gt;</span>
+                                        <span class="ms-2">&lt;/<span class="red">body</span>&gt;</span>
+                                        <span>&lt;/<span class="red">html</span>&gt;</span>
+                                    </code>
+                                </pre>
+                            </div>
+                            <p>You can also include <a href="#">Popper</a> and our JS separately. If you don’t plan to use dropdowns, popovers, or tooltips, save some kilobytes by not including Popper.</p>
+                            <div class="bg-light rounded-2 me-4 mb-3 py-4 ps-0 position-relative">
+                                <div class="position-absolute right4top0">
+                                    <button class="btn codeCopyButtons border-0">Copy</button>
+                                </div>
+                                <pre class="d-flex p-0 m-0">
+                                    <code class="overflow-auto d-flex flex-column py-2 px-3 m-0">
+                                        <span>&lt;<span class="red">script</span> <span class="purple">src</span>=<span class="blue">"https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"</span> <span class="purple">integrity</span>=<span class="blue">"sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"</span> <span class="purple">crossorigin</span>=<span class="blue">"anonymous"</span>&gt;&lt;/<span class="red">script</span>&gt;</span>
+                                        <span>&lt;<span class="red">script</span> <span class="purple">src</span>=<span class="blue">"https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"</span> <span class="purple">integrity</span>=<span class="blue">"sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"</span> <span class="purple">crossorigin</span>=<span class="blue">"anonymous"</span>&gt;&lt;/<span class="red">script</span>&gt;</span>
+                                    </code>
+                                </pre>
+                            </div>
+                        </li>
+
+                        <li>
+                            <p class="ms-0"><strong>Hello, world!</strong> Open the page in your browser of choice to see your Bootstrapped page. Now you can start building with Bootstrap by creating your own <a href="#">layout</a>, adding dozens of <a href="#">components</a>, and utilizing <a href="#">our official examples</a>.</p>
+                        </li>
+                    </ol>
+
+                    <!-- cdn links -->
+                    <div id="cdnlinks" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-3">CDN links</h4>
+                    <p>As reference, here are our primary CDN links.</p>
+                    <!-- cdn links bootstrap and js links code block -->
+                    <div class="overflow-auto text-nowrap text-start mb-3">
+                        <div class="row">
+                            <div class="col-2"><strong>Description</strong></div>
+                            <div class="col"><strong>URL</strong></div>
+                        </div>
+                        <div class="row"><hr size="10" class="my-2" style="opacity: 10;"></div>
+                        <div class="row">
+                            <div class="col-2">CSS</div>
+                            <div class="col-8"><code>https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css</code></div>
+                        </div>
+                        <div class="row"><hr></div>
+                        <div class="row">
+                            <div class="col-2">JS</div>
+                            <div class="col-8"><code>https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js</code></div>
+                        </div>
+                        <div class="row"><hr></div>
+                    </div>
+                    <p>You can also use the CDN to fetch any of our <a href="#">additional builds listed in the Contents page</a>.</p>
+
+                    <!-- next streps -->
+                    <div id="nextsteps" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-3">Next steps</h4>
+                    <!-- next steps unordered lists -->
+                    <ul>
+                        <li>Read a bit more about some <a href="#">important global environment settings</a> that Bootstrap utilizes.</li>
+                        <li>Read about what’s included in Bootstrap in our <a href="#">contents section</a> and the list of <a href="#">components that require JavaScript</a> below.</li>
+                        <li>Need a little more power? Consider building with Bootstrap by <a href="#">including the source files via package manager</a>.</li>
+                        <li>Looking to use Bootstrap as a module with <code>&lt;script type="module"&gt;</code>? Please refer to our <a href="#">using Bootstrap as a module</a> section.</li>
+                    </ul>
+
+                    <!-- js components -->
+                    <div id="jscomponents" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-3">JS components</h4>
+                    <p>Curious which components explicitly require our JavaScript and Popper? If you’re at all unsure about the general page structure, keep reading for an example page template.</p>
+                    <!-- js components unordered lists -->
+                    <ul>
+                        <li>Alerts for dismissing</li>
+                        <li>Buttons for toggling states and checkbox/radio functionality</li>
+                        <li>Carousel for all slide behaviors, controls, and indicators</li>
+                        <li>Collapse for toggling visibility of content</li>
+                        <li>Dropdowns for displaying and positioning (also requires <a href="#">Popper</a>)</li>
+                        <li>Modals for displaying, positioning, and scroll behavior</li>
+                        <li>Navbar for extending our Collapse and Offcanvas plugins to implement responsive behaviors</li>
+                        <li>Navs with the Tab plugin for toggling content panes</li>
+                        <li>Offcanvases for displaying, positioning, and scroll behavior</li>
+                        <li>Scrollspy for scroll behavior and navigation updates</li>
+                        <li>Toasts for displaying and dismissing</li>
+                        <li>Tooltips and popovers for displaying and positioning (also requires <a href="#">Popper</a>)</li>
+                    </ul>
+
+                    <!-- important globals -->
+                    <div id="importantglobals" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-3">Important globals</h4>
+                    <p>Bootstrap employs a handful of important global styles and settings, all of which are almost exclusively geared towards the normalization of cross browser styles. Let’s dive in.</p>
+
+                    <!-- html5 doctype -->
+                    <div id="importantglobals-html5doctype" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-3">HTML5 doctype</h4>
+                    <p>Bootstrap requires the use of the HTML5 doctype. Without it, you’ll see some funky and incomplete styling.</p>
+                    <!-- html5 doctype code block -->
+                    <div class="bg-light rounded-2 me-4 mb-3 py-4 ps-0 position-relative">
+                        <div class="position-absolute right4top0">
+                            <button class="btn codeCopyButtons border-0">Copy</button>
+                        </div>
+                        <pre class="d-flex p-0 m-0">
+                            <code class="overflow-auto d-flex flex-column py-0 px-3 m-0">
+                                <span class="red text-nowrap">&lt;!doctype html&gt;</span>
+                                <span>&lt;<span class="red">html</span> <span class="purple">lang</span><span>=</span><span class="blue">"en"</span>&gt;</span>
+                                <span class="ms-3 my-0 fs-4">···</span>
+                                <span>&lt;/<span class="red">html</span>&gt;</span>
+                            </code>
+                        </pre>
+                    </div>
+
+                    <!-- viewport meta -->
+                    <div id="importantglobals-viewportmeta" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-3">Viewport meta</h4>
+                    <p>Bootstrap is developed mobile first, a strategy in which we optimize code for mobile devices first and then scale up components as necessary using CSS media queries. To ensure proper rendering and touch zooming for all devices, add the responsive viewport meta tag to your <code>&lt;head&gt;</code>.</p>
+                    <!-- viewport meta code block -->
+                    <div class="bg-light rounded-2 me-4 mb-3 py-4 ps-0 position-relative">
+                        <div class="position-absolute right4top0">
+                            <button class="btn codeCopyButtons border-0">Copy</button>
+                        </div>
+                        <pre class="d-flex p-0 m-0">
+                            <code class="overflow-auto d-flex flex-column py-0 px-3 m-0">
+                                <span>&lt;<span class="red">meta</span>=<span class="blue">"viewport</span> <span class="purple">content</span>=<span class="blue">"width=device-width, initial-scale=1"</span>&gt;</span>
+                            </code>
+                        </pre>
+                    </div>
+                    <p>You can see an example of this in action in the <a href="#">quick start</a>.</p>
+
+                    <!-- box sizing -->
+                    <div id="importantglobals-boxsizing" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-2">Box-sizing</h4>
+                    <p>For more straightforward sizing in CSS, we switch the global <code>box-sizing</code> value from <code>content-box</code> to <code>border-box</code>. This ensures <code><span class="red">padding</span></code> does not affect the final computed width of an element, but it can cause problems with some third-party software like Google Maps and Google Custom Search Engine.</p>
+                    <!-- box sizing code block -->
+                    <p>On the rare occasion you need to override it, use something like the following:</p>
+                    <div class="bg-light rounded-2 me-4 mb-3 py-4 ps-0 position-relative">
+                        <div class="position-absolute right4top0">
+                            <button class="btn codeCopyButtons border-0">Copy</button>
+                        </div>
+                        <pre class="d-flex p-0 m-0">
+                            <code class="overflow-auto d-flex flex-column py-0 px-3 m-0">
+                                <span>.<span class="green">selector-for-some-widget</span> &#123;</span>
+                                <span class="ms-2"><span class="red">box-sizing</span>: <span class="red">content-box</span>;</span>
+                                <span>&#125;</span>
+                            </code>
+                        </pre>
+                    </div>
+                    <p>With the above snippet, nested elements—including generated content via <code>::before</code> and <code>::after</code> will all inherit the specified <code>box-sizing</code> for that <code>.selector-for-some-widget</code>.</p>
+                    <p>Learn more about <a href="#">box model and sizing at CSS Tricks</a>.</p>
+
+                    <!-- reboot -->
+                    <div id="importantglobals-reboot" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-2">Reboot</h4>
+                    <p>For improved cross-browser rendering, we use <a href="#">Reboot</a> to correct inconsistencies across browsers and devices while providing slightly more opinionated resets to common HTML elements.</p>
+
+                    <!-- community -->
+                    <div id="importantglobals-community" class="text-white">dummydiv</div>
+                    <h4  class="fs-2 mt-2">Community</h4>
+                    <p>Stay up-to-date on the development of Bootstrap and reach out to the community with these helpful resources.</p>
+                    <!-- community unorder lists -->
+                    <ul>
+                        <li>Read and subscribe to <a href="#">The Official Bootstrap Blog</a>.</li>
+                        <li>Ask questions and explore <a href="#">our GitHub Discussions</a>.</li>
+                        <li>Discuss, ask questions, and more on <a href="#">the community Discord</a> or <a href="#">Bootstrap subreddit</a>.</li>
+                        <li>Chat with fellow Bootstrappers in IRC. On the <code>irc.libera.chat</code> server, in the <code>#bootstrap</code> channel.</li>
+                        <li>Implementation help may be found at Stack Overflow (tagged <a href="#">bootstrap-5</a>).</li>
+                        <li>Developers should use the keyword <code>bootstrap</code> on packages that modify or add to the functionality of Bootstrap when distributing through <a href="#">npm</a> or similar delivery mechanisms for maximum discoverability.
+                        </li>
+                    </ul>
+                    <p>You can also follow <a href="#">@getbootstrap on Twitter</a> for the latest gossip and awesome music videos.</p>
+                </div>
+
+
+                <!-- right sidebar panel -->
+                <div id="rightSideBar" class="col-sm flex-nowrap">
+                    <nav id="navbar-example3" class="navbar navbar-light sticky-top bg-white align-items-start w-100">
+                        <nav class="nav nav-pills flex-column w-100 overflow-auto">
+                            <div class="w-100 ps-3 mt-4">
+                                <h4 class="m-0 py-0 ps-2 text-secondary text-nowrap fs-1rem">On this page</h4>
+                            </div>
+                            <hr class="ms-4 my-2">
+                            <!-- quick start link -->
+                            <a class="nav-link p-0" href="#quickstart">
+                                <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">Quick start</button>
+                            </a>
+                            <!--  cdn links link -->
+                            <a class="nav-link p-0" href="#cdnlinks">
+                                <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">CDN links</button>
+                            </a>
+                            <!-- next steps link -->
+                            <a class="nav-link p-0" href="#nextsteps">
+                                <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">Next steps</button>
+                            </a>
+                            <!-- js components link -->
+                            <a class="nav-link p-0" href="#jscomponents">
+                                <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">JS components</button>
+                            </a>
+                            <!-- important globals link -->
+                            <a class="nav-link p-0" href="#importantglobals">
+                                <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">Important
+                                    globals</button>
+                            </a>
+                            <!-- important globals sub-links -->
+                            <nav class="nav nav-pills flex-column px-3">
+                                <a class="nav-link p-0" href="#importantglobals-html5doctype">
+                                    <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">HTML5
+                                        doctype</button>
+                                </a>
+                                <a class="nav-link p-0" href="#importantglobals-viewportmeta">
+                                    <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">Viewport
+                                        meta</button>
+                                </a>
+                                <a class="nav-link p-0" href="#importantglobals-boxsizing">
+                                    <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">Box-sizing</button>
+                                </a>
+                                <a class="nav-link p-0" href="#importantglobals-reboot">
+                                    <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">Reboot</button>
+                                </a>
+                            </nav>
+                            <!-- community link -->
+                            <a class="nav-link p-0" href="#community">
+                                <button class="btn m-0 py-0 ps-3 w-100 text-start text-nowrap">Community</button>
+                            </a>
+                        </nav>
+                    </nav>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+
+    <!-- footer -->
+    <footer class="py-4 py-md-5 mt-5 bg-body-tertiary">
+        <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
+            <div class="row">
+                <!-- section 1 -->
+                <div class="col-lg-3 mb-3">
+                    <div class="d-flex align-items-center gap-2 mb-1">
+                        <img src="./assets/image/bootstraplogofooter.png" alt="" width="35px">
+                        <!-- <span><h5>Bootstrap</h5></span> -->
+                        <h5 class="m-0">Boostrap</h5>
+                    </div>
+                    <p>Designed and built with all the love in the world by the <a href="#">Bootstrap team</a> with the help of <a href="#">our contributors</a>.</p>
+                    <p>Code licensed <a href="#">MIT</a>, docs <a href="#">CC BY 3.0</a>.</p>
+                    <p>Currently v5.3.3.</p>
+                </div>
+                <!-- section 2 -->
+                <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                    <div class="d-flex flex-column">
+                        <h5>Links</h5>
+                        <a href="#">Home</a>
+                        <a href="#">Docs</a>
+                        <a href="#">Examples</a>
+                        <a href="#">Icons</a>
+                        <a href="#">Themes</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Swag store</a>
+                    </div>
+                </div>
+                <!-- section 3 -->
+                <div class="col-6 col-lg-2 mb-3">
+                    <div class="d-flex flex-column">
+                        <h5>Guides</h5>
+                        <a href="#">Getting started</a>
+                        <a href="#">Starter template</a>
+                        <a href="#">Webpack</a>
+                        <a href="#">Parcel</a>
+                        <a href="#">Vite</a>
+                    </div>
+                </div>
+                <!-- section 4 -->
+                <div class="col-6 col-lg-2 mb-3">
+                    <div class="d-flex flex-column">
+                        <h5>Projects</h5>
+                        <a href="#">Bootstrap 5</a>
+                        <a href="#">Bootstrap 4</a>
+                        <a href="#">Icons</a>
+                        <a href="#">RFS</a>
+                        <a href="#">Example repo</a>
+                    </div>
+                </div>
+                <!-- section 5 -->
+                <div class="col-6 col-lg-2 mb-3">
+                    <div class="d-flex flex-column">
+                        <h5>Community</h5>
+                        <a href="#">Issues</a>
+                        <a href="#">Discussions</a>
+                        <a href="#">Corporate Sponsors</a>
+                        <a href="#">Open Collective</a>
+                        <a href="#">Stack Overflow</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- MODALS FOR THE PAGE STARTS BELOW -->
+
+
+    <!-- navbar search MODAL starts here -->
+    <div class="modal fade" id="navbarSearchModal" tabindex="-1" aria-labelledby="navbarSearchButton" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-body bg-light">
+                    <!-- WRAPPER wraps the search input and icon -->
+                    <div class="wrapper position-relative justify-content-center bg-light">
+                        <input autofocus id="searchModalInput" class="w-100 py-2 px-5 fs-5 border-3 rounded-2 outline-none" type="text" name="" placeholder="Search docs">
+                        <div class="position-absolute mx-3 fs-0pt7rem searchButtonModalSearchLogo">
+                            <img src="./assets/image/searchlogopurple.png" alt="">
+                        </div>
+                        <div class="mt-5 mb-4 d-flex justify-content-center text-secondary fs-0pt7">No recent searches</div>
+                    </div>
+                </div>
+                <!-- modal foorter -->
+                <div class="modal-footer d-flex justify-content-between">
+                    <div class="text-secondary d-flex gap-3 fs-0pt7rem">
+                        <!-- select icon -->
+                        <span><img class="p-1 rounded-1 bg-light" src="./assets/image/searchselecticon.png" alt="" width="17px"> to select</span>
+                        <!-- up and down arrow icon -->
+                        <span><img class="p-1 rounded-1 bg-light" src="./assets/image/searchupicon.png" alt="" width="17px"> <img class="p-1 bg-light rounded-1" src="./assets/image/searchdownicon.png" alt="" width="17px"> to navigate</span>
+                        <!-- search icon -->
+                        <span><img class="rounded-1 bg-light" src="./assets/image/searchescicon.png" alt="" width="22px"> to close</span>
+                    </div>
+                    <!-- algolia icon -->
+                    <div class="text-secondary fs-0pt7rem">
+                        search by 
+                        <img class="px-1" src="./assets/image/algolialogo.png" width="85px" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- navbar search MODAL ends here -->
+
+
+    <!-- toggle MODAL starts here -->
+    <div class="modal fade overflow-hidden" id="toggleModal" tabindex="-1" aria-labelledby="profileInfoButton" aria-hidden="true">
+        <div class="modal-dialog modal-md m-0">
+            <div class="modal-content rounded-0">
+                <!-- header -->
+                <div class="modal-header">
+                    <div class="col-12 d-flex align-items-center">
+                        <h5 class="mt-1">Browse docs</h5>
+                        <!-- close button -->
+                        <button type="button" id="toggleModalCloseButton" class="close mx-1 px-0 pt-0 pb-2 border-0 closeButtons" data-bs-dismiss="modal" aria-label="Close">
+                            <span id="profileInfoCloseButtonFont" class="text-secondary fw-thin border-0 fs-2pt5rem" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- body -->
+                <div class="modal-body overflow-auto h-100 overflow-maxheight-90vh">
+                    <div class="row">
+                        <div class="col">
+                            <!-- boot left panel to access all buttons in css -->
+                            <div class="boot-left-panel d-flex flex-column ps-2">
+                                <!-- getting started -->
+                                <div class="d-flex">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/book.png" alt="" height="20px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Getting Started</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Introduction</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Download</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Contents</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Browsers & devices</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">JavaScript</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Webpack</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Parcel</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Vite</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Accessibility</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">RFS</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">RTL</button>
+                                <button href="#" class="pt-1 pb-0 btn w-50 ms-3 text-start">Contribute</button>
+                                <!-- customize -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/customize.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Customize</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Overview</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Sass</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Options</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Color</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Color modes</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Components</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS variables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Optimize</button>
+                                <!-- layout -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/layout.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Layout</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Breakpoints</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Containers</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Grid</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Columns</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Gutters</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Utilities</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Z-index</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS Grid</button>
+                                <!-- content -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/content.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Content</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Reboot</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Typography</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Images</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Tables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Figures</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS Grid</button>
+                                <!-- content -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/content.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Content</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Reboot</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Typography</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Images</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Tables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Figures</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS Grid</button>
+                                <!-- content -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/content.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Content</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Reboot</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Typography</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Images</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Tables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Figures</button>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- left boot panel to access all button in css -->
+                            <div class="boot-left-panel d-flex flex-column ps-2">
+                                <!-- getting started -->
+                                <div class="d-flex">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/book.png" alt="" height="20px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Getting Started</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Introduction</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Download</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Contents</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Browsers & devices</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">JavaScript</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Webpack</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Parcel</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Vite</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Accessibility</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">RFS</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">RTL</button>
+                                <button href="#" class="pt-1 pb-0 btn w-50 ms-3 text-start">Contribute</button>
+                                <!-- customize -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/customize.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Customize</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Overview</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Sass</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Options</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Color</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Color modes</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Components</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS variables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Optimize</button>
+                                <!-- layout -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/layout.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Layout</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Breakpoints</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Containers</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Grid</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Columns</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Gutters</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Utilities</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Z-index</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS Grid</button>
+                                <!-- content -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/content.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Content</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Reboot</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Typography</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Images</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Tables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Figures</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS Grid</button>
+                                <!-- content -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/content.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Content</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Reboot</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Typography</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Images</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Tables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Figures</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">CSS Grid</button>
+                                <!-- content -->
+                                <div class="d-flex mt-4">
+                                    <div class="d-flex align-items-center pe-2 mb-1">
+                                        <img src="./assets/image/content.png" alt="" height="18px">
+                                    </div>
+                                    <p class="m-0 fw-semibold fs-16">Content</p>
+                                </div>
+                                <button class="pt-1 pb-0 py-2 btn ms-3 text-start">Reboot</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Typography</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Images</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Tables</button>
+                                <button class="pt-1 pb-0 btn w-50 ms-3 text-start">Figures</button>
+                            </div>
+                        </div>
+                        <!-- boot left panel to access button in css -->
+                        <div class="col-12 boot-left-panel">
+                            <!-- migration button -->
+                            <hr class="my-1">
+                            <button class="pt-1 pb-0 py-2 btn ms-3 mt-0 text-start">Migration</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- toggle MODAL ends here -->
+
+
+    <!-- changes TOAST starts here -->
+    <div class="d-flex justify-content-center position-absolute w-100 mt-5">
+        <div id="viewHomeToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="1200">
+            <!-- header -->
+            <div class="toast-header">
+                <strong class="mr-auto">Home page Toast</strong>
+            </div>
+            <!-- body -->
+            <div class="toast-body">
+                <div class="col-12" id="homeToastMsg">Your message goes here.</div>
+            </div>
+        </div>
+    </div>
+    <!-- changes TOAST ends here -->
+
+
+    <!-- profile information MODAL starts here -->
+    <div class="modal fade" id="profileInfoModal" tabindex="-1" aria-labelledby="profileInfoButton" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header mt-4">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <!-- heading -->
+                        <h5 class="modal-title text-center fw-bolder fs-4 PageTitle">PROFILE INFORMATION</h5>
+                        <!-- close button -->
+                        <button type="button" id="profileInfoCloseButton" class="close closeButtons mx-1 px-0 pt-0 pb-2 border-0" data-bs-dismiss="modal" aria-label="Close">
+                            <span id="profileInfoCloseButtonFont" class="border-0 fs-4" aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- modal body -->
+                <div class="modal-body">
+                    <!-- profile pic -->
+                    <div class="px-4 mb-0 d-flex justify-content-center">
+                        <img id="profileInfoPic" src="" alt="" height="80px" width="80px">
+                    </div>
+                    <!-- profile id -->
+                    <div class="row px-4 mb-2 d-flex justify-content-center">
+                        <span class="infoEditIdDiv px-3 w-50 text-center">
+                            <span class="px-0 m-0 infoLabel">Profile ID :
+                                <!-- profile id appear span -->
+                                <span class="px-0 mt-1">
+                                    <span id="profileInfoID">-</span>
+                                </span>
+                            </span>
+                        </span>
+                    </div>
+                    <!-- user info section Email/Role -->
+                    <div class="row px-4">
+                        <!-- email -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">User Email :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoEmail">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                        <!-- role -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Role :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoRole">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                    </div>
+                    <!-- user info section Name/Contact -->
+                    <div class="row px-4">
+                        <!-- name -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Name :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoName">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                        <!-- contact -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Contact No :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoContact">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                    </div>
+                    <!-- user info section DOB/Gender -->
+                    <div class="row px-4">
+                        <!-- dob -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Date of Birth :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoDOB">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                        <!-- gender -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Gender :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoGender">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                    </div>
+                    <!-- user info section Language/Address -->
+                    <div class="row px-4">
+                        <!-- language -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Language :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoLanguage">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                        <!-- address -->
+                        <div class="col-12 col-sm-6">
+                            <label class="col-12 px-0 m-0 text-center infoLabel">Address :</label>
+                            <div class="col p-0 mx-0 text-center infoDiv" id="profileInfoAddress">-</div>
+                            <hr class="hrGreen">
+                        </div>
+                    </div>
+                    <!-- user info section Skills -->
+                    <div class="row px-4 mb-2">
+                        <label class="col-12 px-0 m-0 text-center infoLabel">Skills Selected :</label>
+                        <div class="col-12 px-3 d-flex flex-wrap " id="profileInfoSkillPills"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- profile information MODAL ends here -->
+
+
+    <!-- profile edit MODAL starts here -->
+    <div class="modal fade" id="profileEditModal" tabindex="-1" aria-labelledby="profileEditButton" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <!-- header -->
+                <div class="modal-header mt-4">
+                    <div class="col-12 d-flex justify-content-center align-items-center">
+                        <!-- heading -->
+                        <h5 class="modal-title text-dark fw-bold fs-4 PageTitle">EDIT PROFILE</h5>
+                    </div>
+                </div>
+                <!-- body -->
+                <div class="modal-body">
+                    <form action="" id="profileEditModalForm">
+                        <!-- user edit section FirstName/LastName -->
+                        <div class="row px-4">
+                            <!-- first name -->
+                            <div class="col-12 col-sm-6">
+                                <label class="col-12 px-0 m-0 text-start editLabel">First Name :</label>
+                                <input type="text" class="col w-100 p-2  mx-0 rounded editInput" id="profileEditFname"
+                                    autocomplete="off"></input>
+                                <span id="editfnamespan" class="col-12 px-2 text-start mb-1 invalidSpan">Enter a valid name</span>
+                            </div>
+                            <!-- last name -->
+                            <div class="col-12 col-sm-6">
+                                <label class="col-12 px-0 m-0 text-start editLabel">Last Name (opt) :</label>
+                                <input type="text" class="col w-100 p-2  mx-0 rounded editInput" id="profileEditLname"
+                                    autocomplete="off"></input>
+                                <span id="editlnamespan" class="col-12 px-2 text-start mb-1 invalidSpan">Enter a valid name</span>
+                            </div>
+                        </div>
+                        <!-- user edit section Email/Contact -->
+                        <div class="row px-4">
+                            <!-- email -->
+                            <div class="col-12 col-sm-6">
+                                <label class="col-12 px-0 m-0 text-start editLabel">User Email :</label>
+                                <input type="email" class="col w-100 p-2 mx-0 rounded editInput" id="profileEditEmail"
+                                    placeholder="Change email here" autocomplete="off"></input>
+                                <span id="editemailspan" class="col-12 px-2 text-start mb-1 invalidSpan">Enter a valid email</span>
+                            </div>
+                            <!-- contact -->
+                            <div class="col-12 col-sm-6">
+                                <label class="col-12 px-0 m-0 text-start editLabel">Contact No :</label>
+                                <input type="tel" class="col w-100 py-2 mx-0  rounded editInput" id="profileEditContact"
+                                    autocomplete="off"></input>
+                                <span id="editcontactspan" class="col-12 px-2 text-start mb-1 invalidSpan">Enter a valid contact</span>
+                            </div>
+                        </div>
+                        <!-- user edit section DOB/Language -->
+                        <div class="row px-4">
+                            <!-- dob -->
+                            <div class="col-12 col-sm-6">
+                                <label class="col-12 px-0 m-0 text-start editLabel">Date of Birth :</label>
+                                <input type="date" class="col w-100 p-2 mx-0 rounded editInput" id="profileEditDOB"
+                                    min="1964-01-01" max="2009-12-31" autocomplete="off"></input>
+                                <span id="editdobspan" class="col-12 px-2 text-start mb-1 invalidSpan">Age must be greater than 15</span>
+                            </div>
+                            <!-- language -->
+                            <div class="col-12 col-sm-6">
+                                <label class="col-12 px-0 m-0 text-start editLabel">Language :</label>
+                                <select name="" class="col w-100 p-2 mx-0 rounded editInput" id="profileEditLanguage"
+                                    placeholder="Select a Language">
+                                    <option value="">Select</option>
+                                </select>
+                                <span id="editlangspan" class="col-12 px-2 text-start mb-1 invalidSpan">Select a language</span>
+                            </div>
+                        </div>
+                        <!-- user edit section Gender/Adress/Role/EditSkills -->
+                        <div class="row px-4">
+                            <!-- user edit Gender/Adress -->
+                            <div class="col-12 col-sm-6">
+                                <!-- gender -->
+                                <label class="col-12 px-0 m-0 text-start editLabel">Gender :</label>
+                                <!-- male check -->
+                                <div class="form-check mt-1">
+                                    <label for="" class="col-3 px-0 text-start form-check-label">Male</label>
+                                    <input type="radio" name="gender" id="profileEditGenderMale" class="profileEditGender" class="mx-2 form-check-input" value="male">
+                                </div>
+                                <!-- female check -->
+                                <div class="form-check">
+                                    <label for="" class="col-3 px-0 text-start form-check-label">Female</label>
+                                    <input type="radio" name="gender" id="profileEditGenderFemale" class="profileEditGender" class="mx-2 form-check-input" value="female">
+                                </div>
+                                <!-- other check -->
+                                <div class="form-check">
+                                    <label for="" class="col-3 px-0 text-start form-check-label">Other</label>
+                                    <input type="radio" name="gender" id="profileEditGenderOther" class="profileEditGender" class="mx-2 form-check-input" value="other">
+                                </div>
+                                <span id="editgenderspan" class="col-12 px-2 text-start mb-1 invalidSpan">Select a gender</span>
+
+                                <!-- address -->
+                                <label class="col-12 px-0 m-0 text-start editLabel">Address :</label>
+                                <textarea class="col w-100 p-2 mx-0 rounded editInput" rows="3" id="profileEditAddress" autocomplete="off">addressfull</textarea>
+                                <span id="editaddressspan" class="col-12 px-2 text-start mb-1 invalidSpan">Enter proper address</span>
+                            </div>
+
+                            <!-- user edit Role/EditSkills -->
+                            <div class="col-12 col-sm-6">
+                                <!-- role -->
+                                <label class="col-12 px-0 m-0 text-start editLabel">Role (uneditable) :</label>
+                                <!-- admin -->
+                                <div class="col-12 my-1">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="row">
+                                                <label class="col-6 px-0 text-center fw-bold" for="">Admin</label>
+                                                <input class="col-6 my-2" type="checkbox" name="" id="profileEditAdminCheck">
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="row">
+                                                <label class="col-6 px-0 text-center" for="">Read</label>
+                                                <input class="my-2 col-6" type="checkbox" name=""
+                                                    id="profileEditAdminReadCheck">
+                                            </div>
+                                            <div class="row">
+                                                <label class="col-6 px-0 text-center" for="">Write</label>
+                                                <input class=" my-2 col-6" type="checkbox" name=""
+                                                    id="profileEditAdminWriteCheck">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- user -->
+                                <div class="col-12 my-1">
+                                    <hr id="roleHrTag">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <div class="row">
+                                                <label class="col-6 px-0 text-center fw-bold" for="">User</label>
+                                                <input class="col-6 my-2" type="checkbox" name="" id="profileEditUserCheck">
+                                            </div>
+                                        </div>
+                                        <div class="col-7">
+                                            <div class="row">
+                                                <label class="col-6 px-0 text-center" for="">Read</label>
+                                                <input class="my-2 col-6" type="checkbox" name=""
+                                                    id="profileEditUserReadCheck">
+                                            </div>
+                                            <div class="row">
+                                                <label class="col-6 px-0 text-center" for="">Write</label>
+                                                <input class=" my-2 col-6" type="checkbox" name=""
+                                                    id="profileEditUserWriteCheck">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- edit skills -->
+                                <label class="col-12 px-0 m-0 editLabel">Edit Skills :</label>
+                                <input type="text" name="" class="col w-100 p-2 mx-0 rounded editInput" id="profileEditSkill" list="profileEditSkillList" autocomplete="off">
+                                <div class="px-1 d-flex flex-wrap " id="profileEditSkillPills"></div>
+                                <span id="editskillspan" class="col-12 py-md-4 py-sm-2 px-2 text-start mb-1 invalidSpan">Enter atleast one also unique skills</span>
+                            </div>
+                        </div>
+
+                        <!-- break -->
+                        <div class="row mb-2"><br></div>
+
+                        <!-- footer -->
+                        <div class="modal-footer mt-3">
+                            <div class="col-12 d-flex justify-content-evenly align-items-center">
+                                <!-- save changes button -->
+                                <div class="col-12 px-4">
+                                    <button type="button" id="profileEditChangeButton"
+                                        class="w-75 pt-2 pb-2 fw-bolder btn-primary btn mainSubmissionButtons border-light rounded-3 fw-bold required-bg-purple">Save Changes</button>
+                                </div>
+                                <!-- close button -->
+                                <button type="button" class="btn btn-secondary px-2 px-sm-4 mx-4 closeButtons fw-bold rounded-3" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- profile edit MODAL ends here -->
+
+
+
+
+
+
+    <!-- SCRIPTS STARTS BELOW -->
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Include jQuery UI library -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Other libraries and plugins -->
+    <script src="https://cdn.rawgit.com/pguso/jquery-plugin-circliful/master/js/jquery.circliful.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput.min.js"></script>
+
+    <!-- script to autofocus search input in search modal -->
+    <script>
+        $('#navbarSearchModal').on('shown.bs.modal', function() {
+            $(this).find('[autofocus]').focus();
+        });
+    </script>
+
+    <!-- home page sript -->
+    <script src="./scripts/commonUtility.js"></script>
+    <script src="./scripts/bootstrapPageJS.js"></script>
+</body>
+
+</html>
